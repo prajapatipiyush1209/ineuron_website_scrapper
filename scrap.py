@@ -25,8 +25,7 @@ class course_name_data():
             all_course_name =list(course_name['props']['pageProps']['initialState']['init']['courses'].keys())
             #The json. load() is used to read the JSON document from file and The json. loads() is used to convert the JSON String document into the Python dictionary.
             logging.info("Success send the all_course_name to the application.py")
-            course_description  = list(course_name['props']['pageProps']['data']['details']['description'])
-            databases.my_sql_datbase(all_course_name, course_description)
+            databases.my_sql_datbase(all_course_name)
             return all_course_name
            
         except Exception as e:
