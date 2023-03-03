@@ -1,0 +1,91 @@
+<html>
+<style>
+  table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #327a81;
+  color: #fff;
+  font-weight: bold;
+}
+
+td {
+  border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+
+/* responsive design for small screens */
+@media only screen and (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  th {
+    text-align: center;
+  }
+  th {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+  td:before {
+    position: absolute;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-label);
+    font-weight: bold;
+  }
+}
+</style>
+<body>
+ <table>
+  <tr>
+    <th>Course Title</th>
+    <th>Course Description</th>
+    <th>Curriculum</th>
+    <th>Price</th>
+    <th>Duration</th>
+    <th>Requirements</th>
+    <th>Language</th>
+  </tr>
+  <tr>
+	<td>{{ course_title }}</td>
+	<td>{{ course_description }}</td> 
+	<td>{% for i in course_curriculum %}
+		{{i}}<br>
+        {% endfor %}
+	</td>
+	<td>{{ course_price }}</td>
+	<td>{{ course_duration }}</td>
+	<td>{{ course_requirements }}</td>
+	<td>{{ course_language }}</td>
+  </tr>
+ 
+</table>
+  </body> 
+  
+  
+</html>
